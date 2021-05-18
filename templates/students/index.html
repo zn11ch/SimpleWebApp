@@ -1,0 +1,53 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <title></title>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">StudentCatalog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </nav>
+    <div class="col-md-4 mb-3">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>FullName</th>
+            <th>Faculty</th>
+            <th>Course</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{range .}}
+        <tr>
+            <td><a href="/view/{{.ID}}" class="href">{{.ID}}</a></td>
+            <td>{{.FullName}}</td>
+            <td>{{.Faculty}}</td>
+            <td>{{.Course}}</td>
+            <td><a href="/edit/{{.ID}}" class="href">EDIT</a></td>
+        </tr>
+        {{end}}
+
+        </tbody>
+    </table>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <a class="btn btn-primary" href="/add" role="button">Add Student</a>
+
+        </div>
+    </div>
+    </div>
+
+</div>
+</body>
+</html>
