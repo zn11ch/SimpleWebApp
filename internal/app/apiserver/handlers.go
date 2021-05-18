@@ -28,8 +28,6 @@ func (s *ApiServer) add(w http.ResponseWriter, r *http.Request) {
 		t.Execute(w, nil)
 	} else {
 		r.ParseForm()
-
-		// logic part of log in
 		fullName := strings.Join(r.Form["fullname"], "")
 		faculty := strings.Join(r.Form["faculty"], "")
 		course, _ := strconv.Atoi(strings.Join(r.Form["course"], ""))

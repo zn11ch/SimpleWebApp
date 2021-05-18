@@ -28,7 +28,6 @@ func (s *ApiServer) configureStore() error {
 	if err := st.Open(); err != nil {
 		return err
 	}
-
 	s.store = st
 	return nil
 }
