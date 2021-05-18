@@ -22,11 +22,11 @@ func (s *ApiServer) index(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *ApiServer) add(w http.ResponseWriter, r *http.Request) {
-
-	if r.Method == "GET" {
+	switch r.Method {
+	case "GET":
 		t, _ := template.ParseFiles(filepath.Join("templates", "students", "add.html"))
 		t.Execute(w, nil)
-	} else {
+	case "POST":
 		r.ParseForm()
 		fullName := strings.Join(r.Form["fullname"], "")
 		faculty := strings.Join(r.Form["faculty"], "")
